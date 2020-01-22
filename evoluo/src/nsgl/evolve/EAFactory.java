@@ -15,7 +15,7 @@ import nsgl.search.variation.Variation_1_1;
 import nsgl.search.variation.Variation_2_2;
 
 public class EAFactory<T> {
-	//Generational Genetic Algorithm factory (Only uses offsprings in replacement)
+	//Generational Genetic Algorithm factory: (Only uses offsprings in replacement)
 	
 	public PopulationSearch<T,Double>	generational_ga(
 				int mu, Selection<T> parent_selection, 
