@@ -1,5 +1,5 @@
 package nsgl.evolve.haea;
-import nsgl.generic.array.DynArray;
+import nsgl.generic.array.Vector;
 import nsgl.integer.random.Roulette;
 import nsgl.random.raw.UsesRawGenerator;
 import nsgl.real.array.Util;
@@ -24,17 +24,17 @@ public abstract class HaeaOperators<T> implements UsesRawGenerator{
     /**
      * Rates associated to each genetic operator per individual
      */
-    protected DynArray<double[]> rates = new DynArray<double[]>();
+    protected Vector<double[]> rates = new Vector<double[]>();
     
     /**
      * Selected operator
      */
-    protected DynArray<Integer> sel_oper = new DynArray<Integer>();
+    protected Vector<Integer> sel_oper = new Vector<Integer>();
 
     /**
      * Selected operator
      */
-    protected DynArray<Integer> size_offspring_sel_oper = new DynArray<Integer>();
+    protected Vector<Integer> size_offspring_sel_oper = new Vector<Integer>();
 
     /**
      * Number of genetic operators per individual
@@ -163,5 +163,5 @@ public abstract class HaeaOperators<T> implements UsesRawGenerator{
      * Genetic operator rates
      * @return Genetic operator rates
      */
-    public DynArray<double[]> rates(){ return rates; }
+    public Vector<double[]> rates(){ return rates; }
 }

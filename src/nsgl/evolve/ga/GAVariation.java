@@ -1,5 +1,5 @@
 package nsgl.evolve.ga;
-import nsgl.generic.array.DynArray;
+import nsgl.generic.array.Vector;
 import nsgl.bit.random.Random;
 import nsgl.generic.Tagged;
 import nsgl.random.Shuffle;
@@ -38,7 +38,7 @@ public class GAVariation<T> implements Variation<T>{
 	public Tagged<T>[] apply(Tagged<T>... pop) {
 		Shuffle.apply(pop);
 		pop = selection.pick(pop.length, pop);
-        DynArray<Tagged<T>> buffer = new DynArray<Tagged<T>>();
+        Vector<Tagged<T>> buffer = new Vector<Tagged<T>>();
         int n = xover.arity();
         int m = pop.length / n;
         int k = 0;

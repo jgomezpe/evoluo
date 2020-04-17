@@ -1,6 +1,6 @@
 package nsgl.evolve.haea;
 
-import nsgl.generic.array.DynArray;
+import nsgl.generic.array.Vector;
 import nsgl.generic.Tagged;
 import nsgl.search.selection.Selection;
 import nsgl.search.variation.Variation;
@@ -27,7 +27,7 @@ public class HaeaVariation<T> implements Variation<T>{
     	 * @param population Full Population
     	 * @return A subpopulation that can be used for selecting a second parent
     	 */
-	public DynArray<Integer> select( int id, Tagged<T>[] population ){
+	public Vector<Integer> select( int id, Tagged<T>[] population ){
 		return null;
 	}
 
@@ -48,14 +48,14 @@ public class HaeaVariation<T> implements Variation<T>{
     	public Tagged<T>[] apply(Tagged<T>... population){
 		int n = population.length;
 		operators.resize(n);
-		DynArray<Tagged<T>> buffer = new DynArray<Tagged<T>>();
+		Vector<Tagged<T>> buffer = new Vector<Tagged<T>>();
 		for (int i = 0; i<n; i++) {
 			// next line added  Feb 25, 2011
 			if( available(i) ){
 				try{
 					int oper = operators.select(i);
 					Variation<T> o = operators.get(i, oper);
-					DynArray<Integer> subset = select(i, population);
+					Vector<Integer> subset = select(i, population);
 					Tagged<T>[] pop;
 					if(subset==null) pop = population;
 					else{

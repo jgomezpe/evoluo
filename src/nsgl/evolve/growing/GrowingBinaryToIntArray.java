@@ -1,4 +1,5 @@
 package nsgl.evolve.growing;
+
 import nsgl.bit.array.Array;
 import nsgl.bit.array.Util;
 import nsgl.generic.CodeDecodeMap;
